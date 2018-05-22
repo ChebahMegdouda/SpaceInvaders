@@ -3,8 +3,8 @@
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <class id="1" language="java" name="fr.unilim.iut.SpaceInvaders.Vaisseau" project="SpaceInvaders" 
     file="/SpaceInvaders/src/main/java/fr/unilim/iut/SpaceInvaders/Vaisseau.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="189" width="185" x="69" y="502"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    <position height="212" width="185" x="455" y="192"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
@@ -22,8 +22,12 @@
   </class>  
   <association id="3">    
     <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="4" name="vaisseau"/>      
-      <multiplicity id="5" minimum="0" maximum="1"/>    
+      <attribute id="4" name="vaisseau">        
+        <position height="0" width="0" x="386" y="-310"/>      
+      </attribute>      
+      <multiplicity id="5" minimum="0" maximum="1">        
+        <position height="0" width="0" x="386" y="-310"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
