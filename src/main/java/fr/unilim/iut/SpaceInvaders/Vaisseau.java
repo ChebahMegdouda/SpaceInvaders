@@ -3,23 +3,24 @@ package fr.unilim.iut.SpaceInvaders;
 public class Vaisseau {
 	int x;
 	int y;
-	int longueur;
-	int hauteur; 
-	
-	public Vaisseau(int longueur, int hauteur) {
-		this.longueur=longueur;
-		this.hauteur=hauteur;
-		this.x = 0;
-		this.y = 0;
-	}
-	
-	public Vaisseau(int longueur, int hauteur,int x, int y) {
-		this.longueur=longueur; 
-		this.hauteur=hauteur;
-		this.x = x;
-		this.y = y;
-	}
-	
+
+    int longueur;
+    int hauteur;
+
+    public Vaisseau(int x, int y) {
+	    this.longueur=1;
+	    this.hauteur=1;
+	    this.x = x;
+	    this.y = y;
+    }
+
+    public Vaisseau(int longueur, int hauteur, int x, int y) {
+	   this.longueur=longueur;
+	   this.hauteur=hauteur;
+	   this.x = x;
+	   this.y = y;
+    }
+    
    	public int abscisse() {
         return this.x;
 	}

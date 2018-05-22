@@ -73,7 +73,7 @@ public class SpaceInvadersTest {
     
 	@Test
 	public void test_VaisseauAvance_DeplacerVaisseauVersLaGauche() {
-		spaceinvaders.positionnerUnNouveauVaisseau(1,1,x,y);
+		spaceinvaders.positionnerUnNouveauVaisseau(1,1,0,9);
 		spaceinvaders.deplacerVaisseauVersLaGauche();
 		
 		assertEquals("" + 
