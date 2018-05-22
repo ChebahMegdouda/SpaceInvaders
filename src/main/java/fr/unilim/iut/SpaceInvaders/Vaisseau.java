@@ -8,10 +8,7 @@ public class Vaisseau {
     int hauteur;
 
     public Vaisseau(int longueur, int hauteur) {
-		this.longueur=longueur;
-		this.hauteur=hauteur;
-		this.x = 0;
-		this.y = 0;
+		this(longueur, hauteur, 0, 0);
 	}
 
     public Vaisseau(int longueur, int hauteur, int x, int y) {
@@ -22,24 +19,37 @@ public class Vaisseau {
     }
     
    	public int abscisse() {
-        return this.x;
+        return abscisseLaPlusAGauche();
 	}
 	
-	public void seDeplacerVersLaDroite() {
-		this.x = this.x + 1 ;
+   	public void deplacerVaisseauVersLaDroite() {
+		if (this.abscisseLaPlusADroite() < (longueur - 1))
+			this.seDeplacerVersLaDroite();
+	}
+   	
+   	public void seDeplacerVersLaDroite() {
+		this.x = abscisseLaPlusADroite() + 1 ;
 	}
 	
-	public void seDeplacerVersLaGauche() {
-		this.x = this.x - 1 ;
+   	public void seDeplacerVersLaGauche() {
+		this.x = abscisseLaPlusAGauche() - 1 ;
 	}
 	
 	public boolean occupeLaPosition(int x, int y) {
-	     if ((this.x<=x) && (x<=this.x+this.longueur-1)) 
+	     if ((abscisseLaPlusAGauche()<=x) && (x<=abscisseLaPlusADroite())) 
 		      if ( (this.y-this.hauteur+1<=y) && (y<=this.y))
 			  return true;
 		
 	     return false;
     }
+
+	private int abscisseLaPlusAGauche() {
+		return this.x;
+	}
+
+	private int abscisseLaPlusADroite() {
+		return abscisseLaPlusAGauche()+this.longueur-1;
+	}
 
 	public void positionner(int x, int y) {
 		this.x=x;
