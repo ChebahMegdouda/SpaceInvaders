@@ -60,7 +60,7 @@ public class Vaisseau {
 	}
 
 	private int abscisseLaPlusADroite() {
-		return abscisseLaPlusAGauche()+this.longueur-1;
+		return abscisseLaPlusAGauche() + this.longueur-1;
 	}
 
 	public void positionner(int x, int y) {
