@@ -1,11 +1,12 @@
 package fr.unilim.iut.SpaceInvaders;
 
 public class Vaisseau {
-	int x;
-	int y;
-
+	Position origine; 
+	
     int longueur;
     int hauteur;
+    
+ 
 
     public Vaisseau(int longueur, int hauteur) {
 		this(longueur, hauteur, 0, 0);
@@ -14,8 +15,7 @@ public class Vaisseau {
     public Vaisseau(int longueur, int hauteur, int x, int y) {
 	   this.longueur=longueur;
 	   this.hauteur=hauteur;
-	   this.x = x;
-	   this.y = y;
+	   this.origine = new Position (x,y);
     }
     
    	public int abscisse() {
@@ -28,12 +28,14 @@ public class Vaisseau {
 	}
    	
    	public void seDeplacerVersLaDroite() {
-		this.x = abscisseLaPlusADroite() + 1 ;
-	}
+	    this.origine.changerAbscisse(this.origine.abscisse()+1);
+   }
+
 	
-   	public void seDeplacerVersLaGauche() {
-		this.x = abscisseLaPlusAGauche() - 1 ;
-	}
+    public void seDeplacerVersLaGauche() {
+	    this.origine.changerAbscisse(this.origine.abscisse()-1);
+  }
+
 	
 	public boolean occupeLaPosition(int x, int y) {
 		return (estAbscisseCouverte(x) && estOrdonneeCouverte(y));
@@ -44,11 +46,11 @@ public class Vaisseau {
 	}
 
 	private boolean ordonneeLaPlusHaute(int y) {
-		return y<=this.y;
+		return y<=this.origine.ordonnee();
 	}
 
 	private boolean ordonneeLaPlusBasse(int y) {
-		return this.y-this.hauteur+1<=y;
+		return this.origine.ordonnee()-this.hauteur+1<=y;
 	}
 
 	private boolean estAbscisseCouverte(int x) {
@@ -56,7 +58,7 @@ public class Vaisseau {
 	}
 
 	private int abscisseLaPlusAGauche() {
-		return this.x;
+		return this.origine.abscisse();
 	}
 
 	private int abscisseLaPlusADroite() {
@@ -64,10 +66,9 @@ public class Vaisseau {
 	}
 
 	public void positionner(int x, int y) {
-		this.x=x;
-		this.y=y;
-		
-	}
+		  this.origine.changerAbscisse(x);
+		  this.origine.changerOrdonnee(y);
+    }
 
 	
 }
