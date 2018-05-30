@@ -68,8 +68,8 @@ public class SpaceInvadersTest {
 		"...............\n" + 
 		"...............\n" + 
 		"...............\n" + 
-		"...............\n" + 
-		"..............V\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
+		"............VVV\n" + 
+		"............VVV\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
 	}
     
 	@Test
