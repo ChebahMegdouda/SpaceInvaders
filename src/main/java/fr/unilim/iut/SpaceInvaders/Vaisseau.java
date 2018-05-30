@@ -50,7 +50,7 @@ public class Vaisseau {
 	}
 
 	public boolean ordonneeLaPlusHaute(int y) {
-		return y<=this.origine.ordonnee();
+		return y <= this.origine.ordonnee();
 	}
 
 	public boolean ordonneeLaPlusBasse(int y) {
@@ -78,6 +78,7 @@ public class Vaisseau {
 			this.seDeplacerVersLaDroite();
 	}
 
-	
-	
-}}
+	public int longueur() {
+		return this.dimension.longueur();
+	}
+}
