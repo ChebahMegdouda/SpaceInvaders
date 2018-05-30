@@ -15,11 +15,17 @@ public class Vaisseau {
 	    }
 	 
 	 public Vaisseau(Dimension dimension, Position positionOrigine) {
-		    this.dimension = dimension;
-		    this.origine = positionOrigine;
-		    this.vitesse = 1; 
-	    }
+			this(dimension, positionOrigine, 1);
+		}
     
+	 public Vaisseau(Dimension dimension, Position positionOrigine, int vitesse) {
+			this.dimension = dimension;
+			this.origine = positionOrigine;
+			this.vitesse = vitesse;
+		}
+	 
+	 
+	 
    	public int abscisse() {
         return abscisseLaPlusAGauche();
 	}
@@ -43,11 +49,11 @@ public class Vaisseau {
 		return ordonneeLaPlusBasse(y) && ordonneeLaPlusHaute(y);
 	}
 
-	private boolean ordonneeLaPlusHaute(int y) {
+	public boolean ordonneeLaPlusHaute(int y) {
 		return y<=this.origine.ordonnee();
 	}
 
-	private boolean ordonneeLaPlusBasse(int y) {
+	public boolean ordonneeLaPlusBasse(int y) {
 		return this.origine.ordonnee()-this.dimension.hauteur()+1<=y;
 	}
 
@@ -55,11 +61,11 @@ public class Vaisseau {
 		return (abscisseLaPlusAGauche()<=x) && (x<=abscisseLaPlusADroite());
 	}
 
-	private int abscisseLaPlusAGauche() {
+	public int abscisseLaPlusAGauche() {
 		return this.origine.abscisse();
 	}
 
-	private int abscisseLaPlusADroite() {
+	public int abscisseLaPlusADroite() {
 		return abscisseLaPlusAGauche() + this.dimension.longueur()-1;
 	}
 
