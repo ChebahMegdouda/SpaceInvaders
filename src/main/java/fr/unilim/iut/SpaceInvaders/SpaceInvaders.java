@@ -2,6 +2,7 @@ package fr.unilim.iut.SpaceInvaders;
 
 import fr.unilim.iut.SpaceInvaders.util.DebordementEspaceJeuException;
 import fr.unilim.iut.SpaceInvaders.util.HorsEspaceJeuException;
+import fr.unilim.iut.SpaceInvaders.Vaisseau; 
 
 public class SpaceInvaders {
 
@@ -55,27 +56,18 @@ public class SpaceInvaders {
 	}
 
 	public void deplacerVaisseauVersLaDroite() {
-        if (vaisseau.abscisse() < (longueur-1)) vaisseau.seDeplacerVersLaDroite();
+		if (vaisseau.abscisseLaPlusADroite() < (longueur - 1)) {
+			vaisseau.seDeplacerVersLaDroite();
+			if (!estDansEspaceJeu(vaisseau.abscisseLaPlusADroite(), vaisseau.ordonneeLaPlusHaute(3))) {
+				vaisseau.positionner(longueur - vaisseau.longueur(), vaisseau.ordonneeLaPlusHaute(3));
+			}
+		}
 	}
-	
 	public void deplacerVaisseauVersLaGauche() {
         if (vaisseau.abscisse() > (0)) vaisseau.seDeplacerVersLaGauche();
 	}
 
-	public void positionnerUnNouveauVaisseau(int longueur, int hauteur, int x, int y) {
-		if (!estDansEspaceJeu(x, y))
-			throw new HorsEspaceJeuException("La position du vaisseau est en dehors de l'espace jeu");
-
-		if ( !estDansEspaceJeu(x+longueur-1,y))
-			throw new DebordementEspaceJeuException("Le vaisseau déborde de l'espace jeu vers la droite à cause de sa longueur");
-		if (!estDansEspaceJeu(x,y-hauteur+1))
-			throw new DebordementEspaceJeuException("Le vaisseau déborde de l'espace jeu vers le bas à cause de sa hauteur");
-
-		vaisseau = new Vaisseau(longueur, hauteur);
-		vaisseau.positionner(x, y);
-	}
-
-	 public void positionnerUnNouveauVaisseau(Dimension dimension, Position position) {
+	 public void positionnerUnNouveauVaisseau(Dimension dimension, Position position, int vitesse) {
 			
 			int x = position.abscisse();
 			int y = position.ordonnee();
@@ -91,9 +83,7 @@ public class SpaceInvaders {
 			if (!estDansEspaceJeu(x, y - hauteurVaisseau + 1))
 				throw new DebordementEspaceJeuException("Le vaisseau déborde de l'espace jeu vers le bas à cause de sa hauteur");
 
-			vaisseau = new Vaisseau(longueurVaisseau, hauteurVaisseau);
-			vaisseau.positionner(x, y);
+			vaisseau = new Vaisseau(dimension,position,vitesse);
 		}
-	
 	
 }
