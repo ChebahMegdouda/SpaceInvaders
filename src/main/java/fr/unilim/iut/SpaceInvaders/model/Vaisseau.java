@@ -1,43 +1,47 @@
-package fr.unilim.iut.SpaceInvaders;
+package fr.unilim.iut.SpaceInvaders.model;
 
-public class Envahisseur {
-
-	Position origine;
+public class Vaisseau {
+	
+	Position origine; 
+	Dimension dimension;
     int vitesse; 
 
-	 public Envahisseur() {
-		    this(0, 0);
+	 public Vaisseau(int longueur, int hauteur) {
+		    this(longueur, hauteur, 0, 0);
 	    }
 
-	 public Envahisseur(int x, int y) {
-		   this(new Position(x, y),0);
+	 public Vaisseau(int longueur, int hauteur, int x, int y) {
+		   this(new Dimension(longueur, hauteur), new Position(x, y));
 	    }
 	 
-	 public Envahisseur(Position positionOrigine) {
-			this(positionOrigine, 1);
+	 public Vaisseau(Dimension dimension, Position positionOrigine) {
+			this(dimension, positionOrigine, 1);
 		}
     
-	 public Envahisseur(Position positionOrigine, int vitesse) {
+	 public Vaisseau(Dimension dimension, Position positionOrigine, int vitesse) {
+			this.dimension = dimension;
 			this.origine = positionOrigine;
 			this.vitesse = vitesse;
 		}
+	 
+	 
 	 
    	public int abscisse() {
         return abscisseLaPlusAGauche();
 	}
 	  
    	
-   	public void deplacerVersLaDroiteUnEnvahisseur() {
+   	public void seDeplacerVersLaDroite() {
 	    this.origine.changerAbscisse(this.origine.abscisse()+vitesse);
    }
 
 	
-    public void deplacerVersLaGaucheUnEnvahisseur() {
+    public void seDeplacerVersLaGauche() {
 	    this.origine.changerAbscisse(this.origine.abscisse()-vitesse);
   }
 
 	
-	public boolean unEnvahisseurOccupeLaPosition(int x, int y) {
+	public boolean occupeLaPosition(int x, int y) {
 		return (estAbscisseCouverte(x) && estOrdonneeCouverte(y));
     }
 
@@ -50,12 +54,8 @@ public class Envahisseur {
 	}
 
 	public int ordonneeLaPlusBasse() {
-		return this.origine.ordonnee();
+		return this.origine.ordonnee()-this.dimension.hauteur()+1;
 	}
-	
-	public boolean occupeLaPosition(int x, int y) {
-		return (estAbscisseCouverte(x) && estOrdonneeCouverte(y));
-    }
 
 	private boolean estAbscisseCouverte(int x) {
 		return (abscisseLaPlusAGauche()<=x) && (x<=abscisseLaPlusADroite());
@@ -66,21 +66,19 @@ public class Envahisseur {
 	}
 
 	public int abscisseLaPlusADroite() {
-		return abscisseLaPlusAGauche();
+		return abscisseLaPlusAGauche() + this.dimension.longueur()-1;
 	}
 
 	public void positionner(int x, int y) {
 		  this.origine.changerAbscisse(x);
 		  this.origine.changerOrdonnee(y);
     }
-	
-	public void deplacerUnEnvahisseurVersLaDroite() {
-		if (this.abscisseLaPlusADroite() < 1)
-			this.deplacerVersLaDroiteUnEnvahisseur();
+	public void deplacerVaisseauVersLaDroite() {
+		if (this.abscisseLaPlusADroite() < (dimension.longueur() - 1))
+			this.seDeplacerVersLaDroite();
 	}
-	
-	public void deplacerUnEnvahisseurVersLaGauche() {
-		if (this.abscisseLaPlusAGauche() > this.vitesse)
-			this.deplacerVersLaGaucheUnEnvahisseur();
+
+	public int longueur() {
+		return this.dimension.longueur();
 	}
 }

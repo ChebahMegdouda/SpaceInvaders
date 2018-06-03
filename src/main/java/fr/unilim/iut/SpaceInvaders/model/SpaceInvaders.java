@@ -1,8 +1,8 @@
-package fr.unilim.iut.SpaceInvaders;
+package fr.unilim.iut.SpaceInvaders.model;
 
+import fr.unilim.iut.SpaceInvaders.model.Vaisseau;
 import fr.unilim.iut.SpaceInvaders.util.DebordementEspaceJeuException;
-import fr.unilim.iut.SpaceInvaders.util.HorsEspaceJeuException;
-import fr.unilim.iut.SpaceInvaders.Vaisseau; 
+import fr.unilim.iut.SpaceInvaders.util.HorsEspaceJeuException; 
 
 public class SpaceInvaders {
 
