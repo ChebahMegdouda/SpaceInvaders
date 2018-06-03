@@ -73,8 +73,14 @@ public class Envahisseur {
 		  this.origine.changerAbscisse(x);
 		  this.origine.changerOrdonnee(y);
     }
+	
 	public void deplacerUnEnvahisseurVersLaDroite() {
 		if (this.abscisseLaPlusADroite() < 1)
 			this.deplacerVersLaDroiteUnEnvahisseur();
+	}
+	
+	public void deplacerUnEnvahisseurVersLaGauche() {
+		if (this.abscisseLaPlusAGauche() > this.vitesse)
+			this.deplacerVersLaGaucheUnEnvahisseur();
 	}
 }

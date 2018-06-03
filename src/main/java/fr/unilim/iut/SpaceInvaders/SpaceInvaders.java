@@ -93,7 +93,7 @@ public class SpaceInvaders {
 	}
 	
 	public void deplacerEnvahisseurVersLaGauche() {
-        if (envahisseur.abscisse() > (0)) envahisseur.deplacerVersLaGaucheUnEnvahisseur();
+        if (envahisseur.abscisse() > (0)) envahisseur.deplacerUnEnvahisseurVersLaGauche();
 	}
 
 	 public void positionnerUnNouveauVaisseau(Dimension dimension, Position position, int vitesse) {
