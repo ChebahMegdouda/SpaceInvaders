@@ -176,6 +176,23 @@ public class SpaceInvadersTest {
 	       "............VVV\n" + 
 	       "............VVV\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
 	    }
+		
+		@Test
+		public void test_unNouveauEnvahisseurEstCorrectementPositionneDansEspaceJeu() {
+			spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(3,2), new Position(7,9), 1);
+			spaceinvaders.positionnerUnNouveauEnvahisseur(new Position(7,0), 1);
+			assertEquals("" + 
+			".......O.......\n" + 
+			"...............\n" +
+			"...............\n" + 
+			"...............\n" + 
+			"...............\n" + 
+			"...............\n" + 
+			"...............\n" + 
+			"...............\n" + 
+			".......VVV.....\n" + 
+			".......VVV.....\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
+		}
 	
 	
 }

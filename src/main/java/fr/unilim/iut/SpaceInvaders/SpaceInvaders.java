@@ -45,7 +45,7 @@ public class SpaceInvaders {
 		if (this.aUnVaisseauQuiOccupeLaPosition(x, y))
 		      marque=MARQUE_VAISSEAU;
 		else {
-			if (this.aUnVaisseauQuiOccupeLaPosition(x, y)) {
+			if (this.aUnEnvahisseurQuiOccupeLaPosition(x, y)) {
 				marque = MARQUE_ENVAHISSEUR;
 			}
 			else
@@ -59,7 +59,7 @@ public class SpaceInvaders {
 	}
 	
 	private boolean aUnEnvahisseurQuiOccupeLaPosition(int x, int y) {
-		return this.aUnEnvahisseur() && envahisseur.unEnvahisseurOccupeLaPosition(x, y);
+		return this.aUnEnvahisseur() && envahisseur.occupeLaPosition(x, y);
 	}
 
 	private boolean aUnVaisseau() {

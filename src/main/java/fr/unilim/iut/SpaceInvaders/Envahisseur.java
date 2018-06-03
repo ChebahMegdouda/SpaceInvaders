@@ -52,6 +52,10 @@ public class Envahisseur {
 	public int ordonneeLaPlusBasse() {
 		return this.origine.ordonnee();
 	}
+	
+	public boolean occupeLaPosition(int x, int y) {
+		return (estAbscisseCouverte(x) && estOrdonneeCouverte(y));
+    }
 
 	private boolean estAbscisseCouverte(int x) {
 		return (abscisseLaPlusAGauche()<=x) && (x<=abscisseLaPlusADroite());
