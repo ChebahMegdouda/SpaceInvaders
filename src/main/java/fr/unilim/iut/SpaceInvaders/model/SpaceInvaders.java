@@ -1,21 +1,19 @@
 package fr.unilim.iut.SpaceInvaders.model;
 
+import fr.unilim.iut.SpaceInvaders.Constante;
 import fr.unilim.iut.SpaceInvaders.model.Vaisseau;
-import fr.unilim.iut.SpaceInvaders.moteurJeu.Commande;
-import fr.unilim.iut.SpaceInvaders.moteurJeu.Jeu;
 import fr.unilim.iut.SpaceInvaders.util.DebordementEspaceJeuException;
 import fr.unilim.iut.SpaceInvaders.util.HorsEspaceJeuException; 
 
-public class SpaceInvaders implements Jeu{
+public class SpaceInvaders {
 
-	private static final char MARQUE_ENVAHISSEUR = 'O';
 	private static final char MARQUE_FIN_LIGNE = '\n';
 	private static final char MARQUE_VIDE = '.';
 	private static final char MARQUE_VAISSEAU = 'V';
 	int longueur;
 	int hauteur;
     Vaisseau vaisseau;
-    Envahisseur envahisseur;
+	Missile missile;
 
 	public SpaceInvaders(int longueur, int hauteur) {
 		this.longueur = longueur;
@@ -45,31 +43,30 @@ public class SpaceInvaders implements Jeu{
 	private char recupererMarqueDeLaPosition(int x, int y) {
 		char marque;
 		if (this.aUnVaisseauQuiOccupeLaPosition(x, y))
-		      marque=MARQUE_VAISSEAU;
-		else {
-			if (this.aUnEnvahisseurQuiOccupeLaPosition(x, y)) {
-				marque = MARQUE_ENVAHISSEUR;
-			}
-			else
-				marque=MARQUE_VIDE;
-		}
-		return marque;
+		      marque=Constante.MARQUE_VAISSEAU;
+		
+		else if (this.aUnMissileQuiOccupeLaPosition(x, y))
+			marque = Constante.MARQUE_MISSILE;
+		else marque = Constante.MARQUE_VIDE;
+		
+	return marque;
+	}
+
+	private boolean aUnMissileQuiOccupeLaPosition(int x, int y) {
+		return this.aUnMissile() && missile.occupeLaPosition(x, y);
+	}
+	
+
+	private boolean aUnMissile() {
+		return missile!=null;
 	}
 
 	private boolean aUnVaisseauQuiOccupeLaPosition(int x, int y) {
 		return this.aUnVaisseau() && vaisseau.occupeLaPosition(x, y);
 	}
-	
-	private boolean aUnEnvahisseurQuiOccupeLaPosition(int x, int y) {
-		return this.aUnEnvahisseur() && envahisseur.occupeLaPosition(x, y);
-	}
 
 	private boolean aUnVaisseau() {
 		return vaisseau!=null;
-	}
-
-	private boolean aUnEnvahisseur() {
-		return envahisseur!=null;
 	}
 
 	public void deplacerVaisseauVersLaDroite() {
@@ -80,22 +77,13 @@ public class SpaceInvaders implements Jeu{
 			}
 		}
 	}
-
-	public void deplacerEnvahisseurVersLaDroite() {
-		if (envahisseur.abscisseLaPlusADroite() < (longueur - 1)) {
-			envahisseur.deplacerVersLaDroiteUnEnvahisseur();
-			if (!estDansEspaceJeu(envahisseur.abscisseLaPlusADroite(), envahisseur.ordonneeLaPlusHaute())) {
-				envahisseur.positionner(longueur - 1, envahisseur.ordonneeLaPlusHaute());
-			}
-		}
-	}
 	
 	public void deplacerVaisseauVersLaGauche() {
-        if (vaisseau.abscisse() > (0)) vaisseau.seDeplacerVersLaGauche();
-	}
-	
-	public void deplacerEnvahisseurVersLaGauche() {
-        if (envahisseur.abscisse() > (0)) envahisseur.deplacerUnEnvahisseurVersLaGauche();
+		if (0 < vaisseau.abscisseLaPlusAGauche())
+			vaisseau.seDeplacerVersLaGauche();
+		if (!estDansEspaceJeu(vaisseau.abscisseLaPlusAGauche(), vaisseau.ordonneeLaPlusHaute())) {
+			vaisseau.positionner(0, vaisseau.ordonneeLaPlusHaute());
+		}
 	}
 
 	 public void positionnerUnNouveauVaisseau(Dimension dimension, Position position, int vitesse) {
@@ -116,32 +104,17 @@ public class SpaceInvaders implements Jeu{
 
 			vaisseau = new Vaisseau(dimension,position,vitesse);
 		}
+	 public void initialiserJeu() {
+			Position positionVaisseau = new Position(this.longueur/2,this.hauteur-1);
+			Dimension dimensionVaisseau = new Dimension(Constante.VAISSEAU_LONGUEUR, Constante.VAISSEAU_HAUTEUR);
+			positionnerUnNouveauVaisseau(dimensionVaisseau, positionVaisseau, Constante.VAISSEAU_VITESSE);
+		 }
 
-	 public void positionnerUnNouveauEnvahisseur(Position position, int vitesse) {
-			
-			int x = position.abscisse();
-			int y = position.ordonnee();
-			
-			if (!estDansEspaceJeu(x, y))
-				throw new HorsEspaceJeuException("La position de l'envahisseur est en dehors de l'espace jeu");
-
-			envahisseur = new Envahisseur(position,vitesse);
-		}
-
-	@Override
-	public void evoluer(Commande commandeUser) {
-		if (commandeUser.droite = true) {
-			deplacerVaisseauVersLaDroite();
-		} else {
-			if (commandeUser.gauche = true) {
-				deplacerVaisseauVersLaGauche();
-			}
-		}
+	public void tirerUnMissile(Dimension dimension, int i) {
+		// TODO Auto-generated method stub
+		
 	}
 
-	@Override
-	public boolean etreFini() {
-		return false;
-	}
+	
 	
 }
