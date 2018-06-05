@@ -1,26 +1,26 @@
 package fr.unilim.iut.SpaceInvaders.model;
 
-public class Envahisseur {
-
+public class Envahisseur extends Sprite {
+	Dimension dimension;
 	Position origine;
     int vitesse; 
 
 	 public Envahisseur() {
-		    this(0, 0);
-	    }
+		    super(new Dimension(1,1),new Position(0,0), 0);
+	}
 
 	 public Envahisseur(int x, int y) {
-		   this(new Position(x, y),0);
-	    }
+		 	super(new Dimension(1,1),new Position(x, y),0);
+	 }
 	 
 	 public Envahisseur(Position positionOrigine) {
-			this(positionOrigine, 1);
-		}
+		 super(new Dimension(1,1), positionOrigine, 1);
+	}
     
-	 public Envahisseur(Position positionOrigine, int vitesse) {
+	public Envahisseur(Position positionOrigine, int vitesse) {
 			this.origine = positionOrigine;
 			this.vitesse = vitesse;
-		}
+	}
 	 
    	public int abscisse() {
         return abscisseLaPlusAGauche();

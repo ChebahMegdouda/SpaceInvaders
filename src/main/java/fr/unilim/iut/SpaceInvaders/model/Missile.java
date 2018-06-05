@@ -11,4 +11,8 @@ public class Missile extends Sprite {
 		// TODO Auto-generated constructor stub
 	}
 
+	public int hauteur() {
+		return this.hauteur();
+	}
+
 }

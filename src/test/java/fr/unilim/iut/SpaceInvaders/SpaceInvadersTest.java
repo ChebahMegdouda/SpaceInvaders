@@ -111,7 +111,7 @@ public class SpaceInvadersTest {
 		"............VVV\n" + 
 		"............VVV\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
 	}
-<<<<<<< HEAD
+
 	 @Test
 	    public void test_VaisseauAvance_DeplacerVaisseauVersLaGauche() {
 
@@ -130,10 +130,9 @@ public class SpaceInvadersTest {
 	       "....VVV........\n" + 
 	       "....VVV........\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
 	   }
-=======
 	
 	@Test
-	public void test_Envahisseur_DeplacerVaisseauVersLaDroite() {
+	public void test_Envahisseur_DeplacerEnvahiseurVersLaDroite() {
 		spaceinvaders.positionnerUnNouveauEnvahisseur(new Position(14,0), 3);
 		spaceinvaders.deplacerEnvahisseurVersLaDroite();
 		
@@ -185,7 +184,6 @@ public class SpaceInvadersTest {
 		"...............\n" + 
 		"...............\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
 	}
->>>>>>> branch 'master' of https://github.com/ChebahMegdouda/SpaceInvaders
 	
 	@Test
 	public void test_unNouveauVaisseauAvecDimensionEstCorrectementPositionneDansEspaceJeu() {

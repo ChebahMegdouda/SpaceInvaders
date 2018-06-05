@@ -17,8 +17,11 @@ public  class Vaisseau extends Sprite {
 	}
 
 	private Position calculerLaPositionDeTirDuMissile(Dimension dimensionMissile) {
-		// TODO Auto-generated method stub
 		return null;
+	}
+
+	public int hauteur() {
+		return this.hauteur();
 	}
 
 	

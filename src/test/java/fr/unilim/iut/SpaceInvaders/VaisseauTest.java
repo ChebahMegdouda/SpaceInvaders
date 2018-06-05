@@ -2,6 +2,8 @@ package fr.unilim.iut.SpaceInvaders;
 
 import org.junit.Test;
 
+import fr.unilim.iut.SpaceInvaders.model.Dimension;
+import fr.unilim.iut.SpaceInvaders.model.Position;
 import fr.unilim.iut.SpaceInvaders.model.Vaisseau;
 import fr.unilim.iut.SpaceInvaders.util.MissileException;
 
