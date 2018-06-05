@@ -83,4 +83,14 @@ public class Envahisseur extends Sprite {
 		if (this.abscisseLaPlusAGauche() > this.vitesse)
 			this.deplacerVersLaGaucheUnEnvahisseur();
 	}
+
+	public void deplacerEnvahisseur(){
+		int droiteOuGauche = (int) (Math.random()*(0-1));
+		if (droiteOuGauche == 1) {
+			this.deplacerUnEnvahisseurVersLaGauche();
+		}
+		else {
+			this.deplacerUnEnvahisseurVersLaGauche();
+		}
+	}
 }

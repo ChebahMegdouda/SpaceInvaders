@@ -2,10 +2,12 @@ package fr.unilim.iut.SpaceInvaders.model;
 
 import fr.unilim.iut.SpaceInvaders.Constante;
 import fr.unilim.iut.SpaceInvaders.model.Vaisseau;
+import fr.unilim.iut.SpaceInvaders.moteurJeu.Commande;
+import fr.unilim.iut.SpaceInvaders.moteurJeu.Jeu;
 import fr.unilim.iut.SpaceInvaders.util.DebordementEspaceJeuException;
 import fr.unilim.iut.SpaceInvaders.util.HorsEspaceJeuException; 
 
-public class SpaceInvaders {
+public class SpaceInvaders implements Jeu {
 	int longueur;
 	int hauteur;
     Vaisseau vaisseau;
@@ -152,5 +154,24 @@ public class SpaceInvaders {
 	public void tirerUnMissile(Dimension dimension, int i) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public void evoluer(Commande commandeUser) {
+
+		if (commandeUser.gauche) {
+			deplacerVaisseauVersLaGauche();
+		}
+
+		if (commandeUser.droite) {
+			deplacerVaisseauVersLaDroite();
+		}
+		envahisseur.deplacerEnvahisseur();
+}
+
+	@Override
+	public boolean etreFini() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 }

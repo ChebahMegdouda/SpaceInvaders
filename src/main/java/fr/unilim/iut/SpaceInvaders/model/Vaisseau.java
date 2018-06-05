@@ -23,8 +23,4 @@ public  class Vaisseau extends Sprite {
 	public int hauteur() {
 		return this.hauteur();
 	}
-
-	
-	 
-	 
 }
