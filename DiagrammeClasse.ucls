@@ -1,54 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.2.2" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
-  <class id="1" language="java" name="fr.unilim.iut.SpaceInvaders.Vaisseau" project="SpaceInvaders" 
-    file="/SpaceInvaders/src/main/java/fr/unilim/iut/SpaceInvaders/Vaisseau.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="212" width="185" x="723" y="120"/>    
-    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+  <class id="1" language="java" name="fr.unilim.iut.SpaceInvaders.util.DebordementEspaceJeuException" 
+    project="SpaceInvaders" 
+    file="/SpaceInvaders/src/main/java/fr/unilim/iut/SpaceInvaders/util/DebordementEspaceJeuException.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="122" y="174"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="2" language="java" name="fr.unilim.iut.SpaceInvaders.SpaceInvaders" project="SpaceInvaders" 
-    file="/SpaceInvaders/src/main/java/fr/unilim/iut/SpaceInvaders/SpaceInvaders.java" binary="false" 
+  <class id="2" language="java" name="fr.unilim.iut.SpaceInvaders.util.HorsEspaceJeuException" project="SpaceInvaders" 
+    file="/SpaceInvaders/src/main/java/fr/unilim/iut/SpaceInvaders/util/HorsEspaceJeuException.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-<<<<<<< HEAD
-    <position height="-1" width="-1" x="452" y="301"/>    
-=======
-    <position height="-1" width="-1" x="458" y="160"/>    
->>>>>>> branch 'master' of https://github.com/ChebahMegdouda/SpaceInvaders
+    <position height="-1" width="-1" x="275" y="77"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="3" language="java" name="fr.unilim.iut.SpaceInvaders.Dimension" project="SpaceInvaders" 
-    file="/SpaceInvaders/src/main/java/fr/unilim/iut/SpaceInvaders/Dimension.java" binary="false" corner="BOTTOM_RIGHT">    
-<<<<<<< HEAD
-    <position height="-1" width="-1" x="1049" y="315"/>    
+  <class id="3" language="java" name="fr.unilim.iut.SpaceInvaders.moteurJeu.MoteurGraphique" project="SpaceInvaders" 
+    file="/SpaceInvaders/src/main/java/fr/unilim/iut/SpaceInvaders/moteurJeu/MoteurGraphique.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="218" y="331"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="fr.unilim.iut.SpaceInvaders.Position" project="SpaceInvaders" 
-    file="/SpaceInvaders/src/main/java/fr/unilim/iut/SpaceInvaders/Position.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1219" y="315"/>    
-=======
-    <position height="-1" width="-1" x="162" y="200"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="4" language="java" name="fr.unilim.iut.SpaceInvaders.Position" project="SpaceInvaders" 
-    file="/SpaceInvaders/src/main/java/fr/unilim/iut/SpaceInvaders/Position.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="419" y="451"/>    
->>>>>>> branch 'master' of https://github.com/ChebahMegdouda/SpaceInvaders
+  <class id="4" language="java" name="fr.unilim.iut.SpaceInvaders.moteurJeu.InterfaceGraphique" project="SpaceInvaders" 
+    file="/SpaceInvaders/src/main/java/fr/unilim/iut/SpaceInvaders/moteurJeu/InterfaceGraphique.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="504" y="209"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -56,37 +43,9 @@
     </display>  
   </class>  
   <association id="5">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="6" name="vaisseau">        
-<<<<<<< HEAD
-        <position height="0" width="0" x="674" y="-307"/>      
-=======
-        <position height="0" width="0" x="654" y="-382"/>      
->>>>>>> branch 'master' of https://github.com/ChebahMegdouda/SpaceInvaders
-      </attribute>      
-      <multiplicity id="7" minimum="0" maximum="1">        
-<<<<<<< HEAD
-        <position height="0" width="0" x="674" y="-307"/>      
-=======
-        <position height="0" width="0" x="654" y="-382"/>      
->>>>>>> branch 'master' of https://github.com/ChebahMegdouda/SpaceInvaders
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="8">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="9" name="dimension"/>      
-      <multiplicity id="10" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="11">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="12" name="origine"/>      
-      <multiplicity id="13" minimum="0" maximum="1"/>    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="6" name="gui"/>      
+      <multiplicity id="7" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
