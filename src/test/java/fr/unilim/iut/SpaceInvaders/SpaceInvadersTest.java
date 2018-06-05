@@ -23,7 +23,16 @@ public class SpaceInvadersTest {
 	@Test
 	public void test_unNouveauVaisseauEstCorrectementPositionneDansEspaceJeu() {
 		spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(1,1),new Position(7,9), 1);
-		assertEquals("" + "...............\n" + "...............\n" + "...............\n" + "...............\n" + "...............\n" + "...............\n" + "...............\n" + "...............\n" + "...............\n" +	".......V.......\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
+		assertEquals("" + "...............\n" + 
+						  "...............\n" + 
+						  "...............\n" + 
+						  "...............\n" + 
+						  "...............\n" + 
+						  "...............\n" + 
+						  "...............\n" + 
+						  "...............\n" + 
+						  "...............\n" +	
+						  ".......V.......\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
 	}
 
 	@Test

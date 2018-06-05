@@ -1,6 +1,6 @@
 package fr.unilim.iut.SpaceInvaders.model;
 
-public class Vaisseau {
+public class Vaisseau extends Sprite{
 	
 	Position origine; 
 	Dimension dimension;
@@ -19,10 +19,8 @@ public class Vaisseau {
 		}
     
 	 public Vaisseau(Dimension dimension, Position positionOrigine, int vitesse) {
-			this.dimension = dimension;
-			this.origine = positionOrigine;
-			this.vitesse = vitesse;
-		}
+		 super(dimension, positionOrigine, vitesse);
+	}
 	 
 	 
 	 
@@ -73,9 +71,15 @@ public class Vaisseau {
 		  this.origine.changerAbscisse(x);
 		  this.origine.changerOrdonnee(y);
     }
+	
 	public void deplacerVaisseauVersLaDroite() {
 		if (this.abscisseLaPlusADroite() < (dimension.longueur() - 1))
 			this.seDeplacerVersLaDroite();
+	}
+	
+	public void deplacerVaisseauVersLaGauche() {
+		if (this.abscisseLaPlusAGauche() > this.vitesse)
+			this.seDeplacerVersLaGauche();
 	}
 
 	public int longueur() {

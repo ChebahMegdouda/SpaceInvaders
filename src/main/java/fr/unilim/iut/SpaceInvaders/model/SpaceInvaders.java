@@ -1,10 +1,12 @@
 package fr.unilim.iut.SpaceInvaders.model;
 
 import fr.unilim.iut.SpaceInvaders.model.Vaisseau;
+import fr.unilim.iut.SpaceInvaders.moteurJeu.Commande;
+import fr.unilim.iut.SpaceInvaders.moteurJeu.Jeu;
 import fr.unilim.iut.SpaceInvaders.util.DebordementEspaceJeuException;
 import fr.unilim.iut.SpaceInvaders.util.HorsEspaceJeuException; 
 
-public class SpaceInvaders {
+public class SpaceInvaders implements Jeu{
 
 	private static final char MARQUE_ENVAHISSEUR = 'O';
 	private static final char MARQUE_FIN_LIGNE = '\n';
@@ -125,5 +127,21 @@ public class SpaceInvaders {
 
 			envahisseur = new Envahisseur(position,vitesse);
 		}
+
+	@Override
+	public void evoluer(Commande commandeUser) {
+		if (commandeUser.droite = true) {
+			deplacerVaisseauVersLaDroite();
+		} else {
+			if (commandeUser.gauche = true) {
+				deplacerVaisseauVersLaGauche();
+			}
+		}
+	}
+
+	@Override
+	public boolean etreFini() {
+		return false;
+	}
 	
 }
