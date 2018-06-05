@@ -139,7 +139,7 @@ public class SpaceInvaders implements Jeu {
 			throw new HorsEspaceJeuException("La position du vaisseau est en dehors de l'espace jeu");
 		if (!estDansEspaceJeu(x + 1, y))
 			throw new DebordementEspaceJeuException("Le vaisseau déborde de l'espace jeu vers la droite à cause de sa longueur");
-		if (!estDansEspaceJeu(x, y - 1))
+		if (!estDansEspaceJeu(x, y + 1))
 			throw new DebordementEspaceJeuException("Le vaisseau déborde de l'espace jeu vers le bas à cause de sa hauteur");
 
 		envahisseur = new Envahisseur(position,vitesse);

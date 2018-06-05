@@ -133,7 +133,7 @@ public class SpaceInvadersTest {
 	
 	@Test
 	public void test_Envahisseur_DeplacerEnvahiseurVersLaDroite() {
-		spaceinvaders.positionnerUnNouveauEnvahisseur(new Position(14,0), 3);
+		spaceinvaders.positionnerUnNouveauEnvahisseur(new Position(13,0), 1);
 		spaceinvaders.deplacerEnvahisseurVersLaDroite();
 		
 		assertEquals("" + 
@@ -150,7 +150,7 @@ public class SpaceInvadersTest {
 	}
     
 	@Test
-	public void test_VaisseauAvance_DeplacerVaisseauVersLaGauche() {
+	public void test_VaisseauAvance_DeplacerVaisseauVersLaGauche2() {
 		spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(1,1), new Position(0,9), 1);
 		spaceinvaders.deplacerVaisseauVersLaGauche();
 		
